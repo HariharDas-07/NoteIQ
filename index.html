@@ -23,9 +23,14 @@
             <div class="flex items-center gap-2">
                 <span class="text-2xl font-black tracking-tight text-[#1e293b]">NoteIQ</span>
             </div>
-            <a href="#store" class="text-sm font-semibold bg-[#1e293b] hover:bg-[#6d8196] text-white px-5 py-2.5 rounded-xl transition-all shadow-sm">
-                Browse Catalog
-            </a>
+            <div class="flex items-center gap-4">
+                <a href="#wishlist-section" class="text-sm font-semibold text-[#64748b] hover:text-[#1e293b] relative py-2">
+                    Wishlist <span id="wishlist-count-badge" class="ml-1 bg-[#6d8196] text-white text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
+                </a>
+                <a href="#store" class="text-sm font-semibold bg-[#1e293b] hover:bg-[#6d8196] text-white px-5 py-2.5 rounded-xl transition-all shadow-sm">
+                    Browse Catalog
+                </a>
+            </div>
         </div>
     </header>
 
@@ -53,75 +58,112 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-slate-200">
-        <div class="text-center mb-12">
-            <h2 class="text-2xl sm:text-3xl font-black text-[#1e293b]">Direct Acquisition Process</h2>
-            <p class="text-[#64748b] mt-2">Zero technical complications. Clear, lightning-fast manual execution.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
-                <div class="text-[#6d8196] text-xl font-black mb-3">01</div>
-                <h3 class="text-lg font-bold text-[#1e293b] mb-2">Select Material</h3>
-                <p class="text-[#64748b] text-sm">Find your notes or paper. Clicking copy-triggers the accurate title data string straight into your clipboard.</p>
-            </div>
-            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
-                <div class="text-[#6d8196] text-xl font-black mb-3">02</div>
-                <h3 class="text-lg font-bold text-[#1e293b] mb-2">Paste into DM</h3>
-                <p class="text-[#64748b] text-sm">The dashboard auto-redirects straight to our Instagram channel. Simply paste the copied message layout into our DM chat box.</p>
-            </div>
-            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
-                <div class="text-[#6d8196] text-xl font-black mb-3">03</div>
-                <h3 class="text-lg font-bold text-[#1e293b] mb-2">Settle UPI & Download</h3>
-                <p class="text-[#64748b] text-sm">We send instant manual UPI transaction details inside the DM loop. Your high-speed PDF asset delivers instantly upon verification.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Store Section -->
-    <section id="store" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 min-h-screen">
+    <!-- Main Workspace Layout Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:flex lg:gap-8">
         
-        <!-- Controls Setup -->
-        <div class="mb-12 space-y-6">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                    <h2 class="text-3xl font-black text-[#1e293b] tracking-tight">The Library</h2>
-                    <p class="text-[#64748b] mt-1" id="results-count">Processing items...</p>
+        <!-- Store Content Column (Left) -->
+        <div class="lg:w-3/4 w-full">
+            <!-- How It Works Sub-frame -->
+            <section id="how-it-works" class="mb-16">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-black text-[#1e293b]">Direct Acquisition Process</h2>
+                    <p class="text-[#64748b] text-sm mt-1">Zero technical complications. Clear, lightning-fast manual execution.</p>
                 </div>
-                <!-- Search -->
-                <div class="w-full md:w-80">
-                    <input type="text" id="search-input" placeholder="Search exam resources..." 
-                        class="w-full bg-white border border-slate-200 focus:border-[#6d8196] focus:ring-2 focus:ring-[#6d8196]/10 rounded-xl px-4 py-3 text-sm text-[#1e293b] outline-none transition-all placeholder:text-[#cbd5e1]">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
+                        <div class="text-[#6d8196] text-lg font-black mb-2">01</div>
+                        <h3 class="text-sm font-bold text-[#1e293b] mb-1">Select Material</h3>
+                        <p class="text-[#64748b] text-xs leading-relaxed">Find your notes or paper. Use the wishlist to stack up multiple files you want simultaneously.</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
+                        <div class="text-[#6d8196] text-lg font-black mb-2">02</div>
+                        <h3 class="text-sm font-bold text-[#1e293b] mb-1">Paste into DM</h3>
+                        <p class="text-[#64748b] text-xs leading-relaxed">Click Buy (or Buy All in Wishlist) to copy order configurations, then drop them directly inside our IG profile frame.</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
+                        <div class="text-[#6d8196] text-lg font-black mb-2">03</div>
+                        <h3 class="text-sm font-bold text-[#1e293b] mb-1">UPI & Download</h3>
+                        <p class="text-[#64748b] text-xs leading-relaxed">Process single or multi-item book purchases swiftly over direct message. Clear instructions will be supplied immediately.</p>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Category Filters (UPDATED TO EXAM SCHEME) -->
-            <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-4" id="category-filters">
-                <button data-category="all" class="cat-btn px-4 py-2 rounded-lg text-sm font-bold bg-[#6d8196] text-white transition-all shadow-sm shadow-[#6d8196]/10">All Resources</button>
-                <button data-category="ct-notes" class="cat-btn px-4 py-2 rounded-lg text-sm font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">CT Exam Notes</button>
-                <button data-category="sample-paper" class="cat-btn px-4 py-2 rounded-lg text-sm font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">Sample Papers</button>
-                <button data-category="pyqs" class="cat-btn px-4 py-2 rounded-lg text-sm font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">PYQs</button>
-            </div>
+            <!-- Store Section Layout -->
+            <section id="store" class="min-h-screen">
+                <div class="mb-8 space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div>
+                            <h2 class="text-2xl font-black text-[#1e293b] tracking-tight">The Library</h2>
+                            <p class="text-[#64748b] text-xs mt-1" id="results-count">Processing items...</p>
+                        </div>
+                        <div class="w-full sm:w-72">
+                            <input type="text" id="search-input" placeholder="Search exam resources..." 
+                                class="w-full bg-white border border-slate-200 focus:border-[#6d8196] focus:ring-2 focus:ring-[#6d8196]/10 rounded-xl px-4 py-2.5 text-sm text-[#1e293b] outline-none transition-all placeholder:text-[#cbd5e1]">
+                        </div>
+                    </div>
+
+                    <!-- Category Filters -->
+                    <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-4" id="category-filters">
+                        <button data-category="all" class="cat-btn px-4 py-2 rounded-lg text-xs font-bold bg-[#6d8196] text-white transition-all shadow-sm shadow-[#6d8196]/10">All Resources</button>
+                        <button data-category="ct-notes" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">CT Exam Notes</button>
+                        <button data-category="sample-paper" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">Sample Papers</button>
+                        <button data-category="pyqs" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">PYQs</button>
+                    </div>
+                </div>
+
+                <!-- Books Grid -->
+                <div id="books-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Dynamic Elements -->
+                </div>
+
+                <div id="no-results" class="hidden text-center py-20">
+                    <p class="text-[#64748b] text-sm font-medium">No resources match your search parameters.</p>
+                </div>
+            </section>
         </div>
 
-        <!-- Books Grid -->
-        <div id="books-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
-            <!-- Programmatic Injectors via JavaScript -->
+        <!-- Wishlist Sidebar Column (Right) -->
+        <div class="lg:w-1/4 w-full mt-12 lg:mt-0">
+            <aside id="wishlist-section" class="sticky top-24 bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="text-base font-black text-[#1e293b]">My Wishlist</span>
+                        <span id="wishlist-badge" class="bg-slate-100 text-[#1e293b] text-xs font-bold px-2 py-0.5 rounded-md">0</span>
+                    </div>
+                    <button onclick="clearWishlist()" id="clear-wishlist-btn" class="text-xs text-rose-500 hover:text-rose-700 font-medium hidden">Clear All</button>
+                </div>
+
+                <!-- Wishlist Items Container Container -->
+                <div id="wishlist-items" class="space-y-3 max-h-80 overflow-y-auto pr-1 mb-4">
+                    <!-- Empty State placeholder -->
+                    <div id="wishlist-empty" class="text-center py-8 text-xs text-[#94a3b8]">
+                        <p>Your wishlist is currently empty. Bookmark items to build a custom bundle layout.</p>
+                    </div>
+                </div>
+
+                <!-- Bulk Buy Processing Frame -->
+                <div id="wishlist-checkout-box" class="border-t border-slate-100 pt-4 hidden">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold text-[#64748b]">Total Bundle Value:</span>
+                        <span id="wishlist-total-price" class="text-lg font-black text-[#1e293b]">₹0</span>
+                    </div>
+                    <button onclick="handleBulkPurchase()" class="w-full text-center bg-[#6d8196] hover:bg-[#526375] text-white font-bold text-xs py-3.5 px-4 rounded-xl transition-all shadow-md shadow-[#6d8196]/10">
+                        Buy All Wishlisted Items
+                    </button>
+                    <p class="text-[10px] text-center text-[#94a3b8] mt-2">Copies a compiled tracking link containing all chosen objects for IG DM transmission.</p>
+                </div>
+            </aside>
         </div>
 
-        <!-- Empty State Handling -->
-        <div id="no-results" class="hidden text-center py-20">
-            <p class="text-[#64748b] text-lg font-medium">No resources match your search parameters.</p>
-        </div>
-    </section>
+    </div>
 
-    <!-- Notification Engine Component -->
+    <!-- Toast Notification Engine UI Component -->
     <div id="toast" class="fixed bottom-5 right-5 z-50 bg-white border border-slate-200 text-[#1e293b] px-5 py-4 rounded-xl shadow-xl opacity-0 translate-y-10 pointer-events-none transition-all duration-300 max-w-sm">
         <div class="flex items-start gap-3">
-            <div class="h-5 w-5 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 text-xs font-bold">✓</div>
+            <div id="toast-icon" class="h-5 w-5 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 text-xs font-bold">✓</div>
             <div>
-                <p class="font-bold text-sm text-[#1e293b]">Order Info Copied</p>
-                <p class="text-xs text-[#64748b] mt-0.5">Opening Instagram profile interface. Paste the copied item details inside your chat frame.</p>
+                <p id="toast-title" class="font-bold text-sm text-[#1e293b]">Order Info Copied</p>
+                <p id="toast-desc" class="text-xs text-[#64748b] mt-0.5">Opening Instagram profile interface. Paste the copied item details inside your chat frame.</p>
             </div>
         </div>
     </div>
@@ -135,13 +177,14 @@
     <script>
         const INSTAGRAM_DM_LINK = "https://ig.me/m/noteiq_";
 
-        // THE DATA ENGINE: Categorized matching options are 'ct-notes', 'sample-paper', 'pyqs'
+        // Primary Catalog Array
         const books = [
             {
                 id: 1,
                 title: "Complete CT Exam Foundation Notes (Paper-I & II)",
                 category: "ct-notes",
-                price: "₹149",
+                price: "149", // Kept as numeric strings for calculation logic
+                displayPrice: "₹149",
                 originalPrice: "₹499",
                 description: "Comprehensive handwritten modules for Child Development, Pedagogy, and Core Electives.",
                 image: "https://images.unsplash.com/photo-1516116211223-5c359a36298a?auto=format&fit=crop&q=80&w=400"
@@ -150,7 +193,8 @@
                 id: 2,
                 title: "CT Exam Mathematics & Science Mock Mockup Sets",
                 category: "sample-paper",
-                price: "₹99",
+                price: "99",
+                displayPrice: "₹99",
                 originalPrice: "₹299",
                 description: "10 high-probability verified sample question frameworks with complete answers.",
                 image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=400"
@@ -159,19 +203,35 @@
                 id: 3,
                 title: "Last 5 Years CT Exam Solution Solved PYQs",
                 category: "pyqs",
-                price: "₹129",
+                price: "129",
+                displayPrice: "₹129",
                 originalPrice: "₹399",
                 description: "Authentic previous year question papers mapped with precise step-by-step resolution breakdowns.",
                 image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=400"
             }
         ];
 
+        // Track user items purely across localized operational state
+        let wishlist = [];
+
         const grid = document.getElementById('books-grid');
         const searchInput = document.getElementById('search-input');
         const filtersContainer = document.getElementById('category-filters');
         const noResults = document.getElementById('no-results');
         const countIndicator = document.getElementById('results-count');
+        
+        const wishlistItemsContainer = document.getElementById('wishlist-items');
+        const wishlistEmptyState = document.getElementById('wishlist-empty');
+        const wishlistCheckoutBox = document.getElementById('wishlist-checkout-box');
+        const wishlistTotalPriceText = document.getElementById('wishlist-total-price');
+        const wishlistBadge = document.getElementById('wishlist-badge');
+        const wishlistCountBadge = document.getElementById('wishlist-count-badge');
+        const clearWishlistBtn = document.getElementById('clear-wishlist-btn');
+
         const toast = document.getElementById('toast');
+        const toastTitle = document.getElementById('toast-title');
+        const toastDesc = document.getElementById('toast-desc');
+        const toastIcon = document.getElementById('toast-icon');
 
         let currentCategory = 'all';
         let searchQuery = '';
@@ -194,7 +254,9 @@
             noResults.classList.add('hidden');
             countIndicator.innerText = `Showing ${filtered.length} of ${books.length} items`;
 
-            grid.innerHTML = filtered.map(book => `
+            grid.innerHTML = filtered.map(book => {
+                const isInWishlist = wishlist.some(item => item.id === book.id);
+                return `
                 <div class="group bg-white border border-slate-200 hover:border-[#6d8196]/40 hover:shadow-md rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between">
                     <div>
                         <div class="aspect-[4/5] bg-slate-50 overflow-hidden relative border-b border-slate-100">
@@ -205,29 +267,118 @@
                         </div>
                         
                         <div class="p-5">
-                            <h3 class="font-bold text-base text-[#1e293b] leading-snug group-hover:text-[#6d8196] transition-colors line-clamp-2">${book.title}</h3>
+                            <h3 class="font-bold text-sm text-[#1e293b] leading-snug group-hover:text-[#6d8196] transition-colors line-clamp-2">${book.title}</h3>
                             <p class="text-[#64748b] text-xs mt-2 line-clamp-2">${book.description}</p>
                         </div>
                     </div>
 
                     <div class="px-5 pb-5 pt-2">
-                        <div class="flex items-baseline gap-2 mb-4">
-                            <span class="text-xl font-extrabold text-[#1e293b]">${book.price}</span>
-                            <span class="text-xs text-[#94a3b8] line-through">${book.originalPrice}</span>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-lg font-extrabold text-[#1e293b]">${book.displayPrice}</span>
+                                <span class="text-xs text-[#94a3b8] line-through">${book.originalPrice}</span>
+                            </div>
+                            <!-- Wishlist Toggle -->
+                            <button onclick="toggleWishlist(${book.id})" class="text-xs p-2 rounded-lg border transition-all ${isInWishlist ? 'bg-rose-50 border-rose-200 text-rose-500' : 'bg-slate-50 border-slate-200 text-slate-400 hover:text-slate-600'}" title="Toggle Wishlist">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                    <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
+                                </svg>
+                            </button>
                         </div>
-                        <button onclick="handlePurchase('${book.title.replace(/'/g, "\\'")}')" class="w-full text-center bg-[#1e293b] hover:bg-[#6d8196] text-white font-bold text-xs py-3.5 px-4 rounded-xl transition-all shadow-sm">
+                        <button onclick="handlePurchase('${book.title.replace(/'/g, "\\'")}')" class="w-full text-center bg-[#1e293b] hover:bg-[#6d8196] text-white font-bold text-xs py-3 px-4 rounded-xl transition-all shadow-sm">
                             Buy via Instagram DM
                         </button>
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
         }
 
+        // Wishlist Modification Functions
+        function toggleWishlist(id) {
+            const targetBook = books.find(b => b.id === id);
+            const index = wishlist.findIndex(item => item.id === id);
+
+            if (index > -1) {
+                wishlist.splice(index, 1);
+                triggerToast("Removed from Wishlist", "Item was dropped from your quicksave bay.", true);
+            } else {
+                wishlist.push(targetBook);
+                triggerToast("Added to Wishlist", "Item is pinned to your local bundle layout view.", false);
+            }
+
+            renderWishlist();
+            displayBooks();
+        }
+
+        function renderWishlist() {
+            wishlistBadge.innerText = wishlist.length;
+            wishlistCountBadge.innerText = wishlist.length;
+
+            if (wishlist.length === 0) {
+                wishlistItemsContainer.innerHTML = `
+                    <div id="wishlist-empty" class="text-center py-8 text-xs text-[#94a3b8]">
+                        <p>Your wishlist is currently empty. Bookmark items to build a custom bundle layout.</p>
+                    </div>
+                `;
+                wishlistCheckoutBox.classList.add('hidden');
+                clearWishlistBtn.classList.add('hidden');
+                return;
+            }
+
+            wishlistEmptyState.classList.add('hidden');
+            wishlistCheckoutBox.classList.remove('hidden');
+            clearWishlistBtn.classList.remove('hidden');
+
+            let total = 0;
+            wishlistItemsContainer.innerHTML = wishlist.map(item => {
+                total += parseInt(item.price);
+                return `
+                    <div class="flex items-center gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-100 text-xs relative group">
+                        <img src="${item.image}" class="w-10 h-12 object-cover rounded-md border border-slate-200">
+                        <div class="flex-1 min-w-0 pr-4">
+                            <p class="font-bold text-[#1e293b] truncate">${item.title}</p>
+                            <p class="text-[#64748b] font-medium mt-0.5">${item.displayPrice}</p>
+                        </div>
+                        <button onclick="toggleWishlist(${item.id})" class="absolute right-2 top-2.5 text-slate-400 hover:text-rose-500 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+
+            wishlistTotalPriceText.innerText = `₹${total}`;
+        }
+
+        function clearWishlist() {
+            wishlist = [];
+            renderWishlist();
+            displayBooks();
+            triggerToast("Wishlist Cleared", "All cached items have been reset.", true);
+        }
+
+        // Single Purchase Direct Redirect Out
         function handlePurchase(title) {
             const formattedMsg = `Hi NoteIQ, I want to purchase your exam resource: "${title}". Please send me the payment details.`;
+            executeCopyAndRedirect(formattedMsg);
+        }
+
+        // Bulk Purchase Bundle Mechanism
+        function handleBulkPurchase() {
+            if (wishlist.length === 0) return;
             
-            navigator.clipboard.writeText(formattedMsg).then(() => {
-                showToast();
+            const titlesList = wishlist.map((item, index) => `${index + 1}. ${item.title}`).join('\n');
+            const totalValue = wishlistTotalPriceText.innerText;
+            
+            const formattedMsg = `Hi NoteIQ, I want to purchase this custom bundle layout of resources:\n\n${titlesList}\n\nTotal Bundle Value: ${totalValue}.\nPlease send me the payment details for these items.`;
+            
+            executeCopyAndRedirect(formattedMsg);
+        }
+
+        function executeCopyAndRedirect(textPayload) {
+            navigator.clipboard.writeText(textPayload).then(() => {
+                triggerToast("Order Info Copied", "Opening Instagram profile interface. Paste the copied item details inside your chat frame.", false);
                 setTimeout(() => {
                     window.open(INSTAGRAM_DM_LINK, '_blank');
                 }, 1800);
@@ -237,13 +388,25 @@
             });
         }
 
-        function showToast() {
+        function triggerToast(title, description, isWarning) {
+            toastTitle.innerText = title;
+            toastDesc.innerText = description;
+            
+            if (isWarning) {
+                toastIcon.className = "h-5 w-5 rounded-full bg-rose-50 flex items-center justify-center text-rose-500 text-xs font-bold";
+                toastIcon.innerText = "!";
+            } else {
+                toastIcon.className = "h-5 w-5 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 text-xs font-bold";
+                toastIcon.innerText = "✓";
+            }
+
             toast.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
             setTimeout(() => {
                 toast.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
             }, 3000);
         }
 
+        // Event Handling Filters Setup
         searchInput.addEventListener('input', (e) => {
             searchQuery = e.target.value.toLowerCase();
             displayBooks();
@@ -265,7 +428,9 @@
             displayBooks();
         });
 
+        // Initialize view layers
         displayBooks();
+        renderWishlist();
     </script>
 </body>
 </html>
