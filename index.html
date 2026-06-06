@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteIQ | Premium Exam Resources</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        /* Custom scrollbar matching Light Palette */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6d8196; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-[#1e293b] font-sans antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-black/5 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl font-black tracking-tight text-[#1e293b]">NoteIQ</span>
+            </div>
+            <a href="#store" class="text-sm font-semibold bg-[#1e293b] hover:bg-[#6d8196] text-white px-5 py-2.5 rounded-xl transition-all shadow-sm">
+                Browse Catalog
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-20 pb-20 lg:pt-28 lg:pb-24 bg-white border-b border-slate-100">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(109,129,150,0.05),transparent_50%)]"></div>
+        <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#6d8196]/10 text-[#6d8196] border border-[#6d8196]/20 mb-6">
+                📚 Premium Exam Prep Assets
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-[#1e293b] mb-6">
+                Crack Your Exams with Premium <span class="text-[#6d8196]">NoteIQ Guides</span>
+            </h1>
+            <p class="text-base sm:text-lg text-[#64748b] max-w-2xl mx-auto mb-10 leading-relaxed">
+                High-quality CT exam notes, structured sample papers, and authentic previous year questions. Select your material, secure your copy through Instagram DM, and get instant access.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#store" class="bg-[#6d8196] hover:bg-[#526375] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-md shadow-[#6d8196]/10 text-center">
+                    Explore 50+ Resources
+                </a>
+                <a href="#how-it-works" class="bg-[#f1f5f9] hover:bg-[#e2e8f0] text-[#1e293b] font-bold px-8 py-4 rounded-xl transition-all text-center">
+                    How to Buy
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-slate-200">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl sm:text-3xl font-black text-[#1e293b]">Direct Acquisition Process</h2>
+            <p class="text-[#64748b] mt-2">Zero technical complications. Clear, lightning-fast manual execution.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+                <div class="text-[#6d8196] text-xl font-black mb-3">01</div>
+                <h3 class="text-lg font-bold text-[#1e293b] mb-2">Select Material</h3>
+                <p class="text-[#64748b] text-sm">Find your notes or paper. Clicking copy-triggers the accurate title data string straight into your clipboard.</p>
+            </div>
+            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+                <div class="text-[#6d8196] text-xl font-black mb-3">02</div>
+                <h3 class="text-lg font-bold text-[#1e293b] mb-2">Paste into DM</h3>
+                <p class="text-[#64748b] text-sm">The dashboard auto-redirects straight to our Instagram channel. Simply paste the copied message layout into our DM chat box.</p>
+            </div>
+            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+                <div class="text-[#6d8196] text-xl font-black mb-3">03</div>
+                <h3 class="text-lg font-bold text-[#1e293b] mb-2">Settle UPI & Download</h3>
+                <p class="text-[#64748b] text-sm">We send instant manual UPI transaction details inside the DM loop. Your high-speed PDF asset delivers instantly upon verification.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Section -->
+    <section id="store" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 min-h-screen">
+        
+        <!-- Controls Setup -->
+        <div class="mb-12 space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <h2 class="text-3xl font-black text-[#1e293b] tracking-tight">The Library</h2>
+                    <p class="text-[#64748b] mt-1" id="results-count">Processing items...</p>
+                </div>
+                <!-- Search -->
+                <div class="w-full md:w-80">
+                    <input type="text" id="search-input" placeholder="Search exam resources..." 
+                        class="w-full bg-white border border-slate-200 focus:border-[#6d8196] focus:ring-2 focus:ring-[#6d8196]/10 rounded-xl px-4 py-3 text-sm text-[#1e293b] outline-none transition-all placeholder:text-[#cbd5e1]">
+                </div>
+            </div>
+
+            <!-- Category Filters (UPDATED TO EXAM SCHEME) -->
+            <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-4" id="category-filters">
+                <button data-category="all" class="cat-btn px-4 py-2 rounded-lg text-sm font-bold bg-[#6d8196] text-white transition-all shadow-sm shadow-[#6d8196]/10">All Resources</button>
+                <button data-category="ct-notes" class="cat-btn px-4 py-2 rounded-lg text-sm font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">CT Exam Notes</button>
+                <button data-category="sample-paper" class="cat-btn px-4 py-2 rounded-lg text-sm font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">Sample Papers</button>
+                <button data-category="pyqs" class="cat-btn px-4 py-2 rounded-lg text-sm font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">PYQs</button>
+            </div>
+        </div>
+
+        <!-- Books Grid -->
+        <div id="books-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+            <!-- Programmatic Injectors via JavaScript -->
+        </div>
+
+        <!-- Empty State Handling -->
+        <div id="no-results" class="hidden text-center py-20">
+            <p class="text-[#64748b] text-lg font-medium">No resources match your search parameters.</p>
+        </div>
+    </section>
+
+    <!-- Notification Engine Component -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 bg-white border border-slate-200 text-[#1e293b] px-5 py-4 rounded-xl shadow-xl opacity-0 translate-y-10 pointer-events-none transition-all duration-300 max-w-sm">
+        <div class="flex items-start gap-3">
+            <div class="h-5 w-5 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 text-xs font-bold">✓</div>
+            <div>
+                <p class="font-bold text-sm text-[#1e293b]">Order Info Copied</p>
+                <p class="text-xs text-[#64748b] mt-0.5">Opening Instagram profile interface. Paste the copied item details inside your chat frame.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white py-12 text-center text-xs text-[#94a3b8]">
+        <p>&copy; 2026 NoteIQ. Scaled Static Architecture Deployment Core.</p>
+    </footer>
+
+    <!-- Script Application Layer -->
+    <script>
+        const INSTAGRAM_DM_LINK = "https://ig.me/m/noteiq_";
+
+        // THE DATA ENGINE: Categorized matching options are 'ct-notes', 'sample-paper', 'pyqs'
+        const books = [
+            {
+                id: 1,
+                title: "Complete CT Exam Foundation Notes (Paper-I & II)",
+                category: "ct-notes",
+                price: "₹149",
+                originalPrice: "₹499",
+                description: "Comprehensive handwritten modules for Child Development, Pedagogy, and Core Electives.",
+                image: "https://images.unsplash.com/photo-1516116211223-5c359a36298a?auto=format&fit=crop&q=80&w=400"
+            },
+            {
+                id: 2,
+                title: "CT Exam Mathematics & Science Mock Mockup Sets",
+                category: "sample-paper",
+                price: "₹99",
+                originalPrice: "₹299",
+                description: "10 high-probability verified sample question frameworks with complete answers.",
+                image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=400"
+            },
+            {
+                id: 3,
+                title: "Last 5 Years CT Exam Solution Solved PYQs",
+                category: "pyqs",
+                price: "₹129",
+                originalPrice: "₹399",
+                description: "Authentic previous year question papers mapped with precise step-by-step resolution breakdowns.",
+                image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=400"
+            }
+        ];
+
+        const grid = document.getElementById('books-grid');
+        const searchInput = document.getElementById('search-input');
+        const filtersContainer = document.getElementById('category-filters');
+        const noResults = document.getElementById('no-results');
+        const countIndicator = document.getElementById('results-count');
+        const toast = document.getElementById('toast');
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function displayBooks() {
+            const filtered = books.filter(book => {
+                const matchesCategory = currentCategory === 'all' || book.category === currentCategory;
+                const matchesSearch = book.title.toLowerCase().includes(searchQuery) || 
+                                      book.description.toLowerCase().includes(searchQuery);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                countIndicator.innerText = `0 resources found`;
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            countIndicator.innerText = `Showing ${filtered.length} of ${books.length} items`;
+
+            grid.innerHTML = filtered.map(book => `
+                <div class="group bg-white border border-slate-200 hover:border-[#6d8196]/40 hover:shadow-md rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-[4/5] bg-slate-50 overflow-hidden relative border-b border-slate-100">
+                            <img src="${book.image}" alt="${book.title}" class="w-full h-full object-cover group-hover:scale-102 transition-all duration-500" loading="lazy">
+                            <span class="absolute top-3 right-3 text-[10px] uppercase tracking-wider font-bold bg-white/90 text-[#1e293b] px-2.5 py-1 rounded-md border border-slate-200">
+                                ${book.category === 'ct-notes' ? 'CT Notes' : book.category === 'sample-paper' ? 'Sample Paper' : 'PYQ'}
+                            </span>
+                        </div>
+                        
+                        <div class="p-5">
+                            <h3 class="font-bold text-base text-[#1e293b] leading-snug group-hover:text-[#6d8196] transition-colors line-clamp-2">${book.title}</h3>
+                            <p class="text-[#64748b] text-xs mt-2 line-clamp-2">${book.description}</p>
+                        </div>
+                    </div>
+
+                    <div class="px-5 pb-5 pt-2">
+                        <div class="flex items-baseline gap-2 mb-4">
+                            <span class="text-xl font-extrabold text-[#1e293b]">${book.price}</span>
+                            <span class="text-xs text-[#94a3b8] line-through">${book.originalPrice}</span>
+                        </div>
+                        <button onclick="handlePurchase('${book.title.replace(/'/g, "\\'")}')" class="w-full text-center bg-[#1e293b] hover:bg-[#6d8196] text-white font-bold text-xs py-3.5 px-4 rounded-xl transition-all shadow-sm">
+                            Buy via Instagram DM
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function handlePurchase(title) {
+            const formattedMsg = `Hi NoteIQ, I want to purchase your exam resource: "${title}". Please send me the payment details.`;
+            
+            navigator.clipboard.writeText(formattedMsg).then(() => {
+                showToast();
+                setTimeout(() => {
+                    window.open(INSTAGRAM_DM_LINK, '_blank');
+                }, 1800);
+            }).catch(err => {
+                console.error('Clipboard permission error', err);
+                window.open(INSTAGRAM_DM_LINK, '_blank');
+            });
+        }
+
+        function showToast() {
+            toast.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }, 3000);
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.toLowerCase();
+            displayBooks();
+        });
+
+        filtersContainer.addEventListener('click', (e) => {
+            const button = e.target.closest('.cat-btn');
+            if (!button) return;
+
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-[#6d8196]', 'text-white', 'shadow-sm', 'shadow-[#6d8196]/10');
+                btn.classList.add('bg-white', 'border-slate-200', 'text-[#64748b]');
+            });
+
+            button.classList.remove('bg-white', 'border-slate-200', 'text-[#64748b]');
+            button.classList.add('bg-[#6d8196]', 'text-white', 'shadow-sm', 'shadow-[#6d8196]/10');
+
+            currentCategory = button.getAttribute('data-category');
+            displayBooks();
+        });
+
+        displayBooks();
+    </script>
+</body>
+</html>
