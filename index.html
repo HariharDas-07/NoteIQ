@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoteIQ | Premium Exam Resources</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html { scroll-behavior: smooth; }
@@ -13,11 +12,19 @@
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #6d8196; }
+
+        /* Hide horizontal scrollbar track for clean mobile carousel view */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
     </style>
 </head>
 <body class="bg-[#f8fafc] text-[#1e293b] font-sans antialiased">
 
-    <!-- Header / Navigation -->
     <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-black/5 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2">
@@ -34,7 +41,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="relative overflow-hidden pt-20 pb-20 lg:pt-28 lg:pb-24 bg-white border-b border-slate-100">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(109,129,150,0.05),transparent_50%)]"></div>
         <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
@@ -58,12 +64,9 @@
         </div>
     </section>
 
-    <!-- Main Workspace Layout Grid -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:flex lg:gap-8">
         
-        <!-- Store Content Column (Left) -->
         <div class="lg:w-3/4 w-full">
-            <!-- How It Works Sub-frame -->
             <section id="how-it-works" class="mb-16">
                 <div class="mb-8">
                     <h2 class="text-2xl font-black text-[#1e293b]">Direct Acquisition Process</h2>
@@ -88,7 +91,6 @@
                 </div>
             </section>
 
-            <!-- Store Section Layout -->
             <section id="store" class="min-h-screen">
                 <div class="mb-8 space-y-4">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -102,7 +104,6 @@
                         </div>
                     </div>
 
-                    <!-- Category Filters -->
                     <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-4" id="category-filters">
                         <button data-category="all" class="cat-btn px-4 py-2 rounded-lg text-xs font-bold bg-[#6d8196] text-white transition-all shadow-sm shadow-[#6d8196]/10">All Resources</button>
                         <button data-category="ct-notes" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">CT Exam Notes</button>
@@ -111,10 +112,8 @@
                     </div>
                 </div>
 
-                <!-- Books Grid -->
-                <div id="books-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <!-- Dynamic Elements -->
-                </div>
+                <div id="books-grid" class="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory no-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-x-visible md:pb-0 md:snap-none">
+                    </div>
 
                 <div id="no-results" class="hidden text-center py-20">
                     <p class="text-[#64748b] text-sm font-medium">No resources match your search parameters.</p>
@@ -122,7 +121,6 @@
             </section>
         </div>
 
-        <!-- Wishlist Sidebar Column (Right) -->
         <div class="lg:w-1/4 w-full mt-12 lg:mt-0">
             <aside id="wishlist-section" class="sticky top-24 bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
@@ -133,15 +131,12 @@
                     <button onclick="clearWishlist()" id="clear-wishlist-btn" class="text-xs text-rose-500 hover:text-rose-700 font-medium hidden">Clear All</button>
                 </div>
 
-                <!-- Wishlist Items Container Container -->
                 <div id="wishlist-items" class="space-y-3 max-h-80 overflow-y-auto pr-1 mb-4">
-                    <!-- Empty State placeholder -->
                     <div id="wishlist-empty" class="text-center py-8 text-xs text-[#94a3b8]">
                         <p>Your wishlist is currently empty. Bookmark items to build a custom bundle layout.</p>
                     </div>
                 </div>
 
-                <!-- Bulk Buy Processing Frame -->
                 <div id="wishlist-checkout-box" class="border-t border-slate-100 pt-4 hidden">
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-xs font-bold text-[#64748b]">Total Bundle Value:</span>
@@ -157,25 +152,24 @@
 
     </div>
 
-    <!-- Toast Notification Engine UI Component -->
     <div id="toast" class="fixed bottom-5 right-5 z-50 bg-white border border-slate-200 text-[#1e293b] px-5 py-4 rounded-xl shadow-xl opacity-0 translate-y-10 pointer-events-none transition-all duration-300 max-w-sm">
         <div class="flex items-start gap-3">
             <div id="toast-icon" class="h-5 w-5 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 text-xs font-bold">✓</div>
             <div>
                 <p id="toast-title" class="font-bold text-sm text-[#1e293b]">Order Info Copied</p>
-                <p id="toast-desc" class="text-xs text-[#64748b] mt-0.5">Opening Instagram profile interface. Paste the copied item details inside your chat frame.</p>
+                <p id="toast-desc" class="text-xs text-[#64748b] mt-0.5">Opening Instagram. Paste the copied details into our DM chat frame.</p>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="border-t border-slate-200 bg-white py-12 text-center text-xs text-[#94a3b8]">
         <p>&copy; 2026 NoteIQ. Scaled Static Architecture Deployment Core.</p>
     </footer>
 
-    <!-- Script Application Layer -->
     <script>
-        const INSTAGRAM_DM_LINK = "https://ig.me/m/noteiq_";
+        // Deep linking protocols for native app execution
+        const INSTAGRAM_APP_URI = "instagram://user?username=noteiq_"; 
+        const INSTAGRAM_WEB_LINK = "https://instagram.com/noteiq_";
 
         // Primary Catalog Array
         const books = [
@@ -183,7 +177,7 @@
                 id: 1,
                 title: "Complete CT Exam Foundation Notes (Paper-I & II)",
                 category: "ct-notes",
-                price: "149", // Kept as numeric strings for calculation logic
+                price: "149", 
                 displayPrice: "₹149",
                 originalPrice: "₹499",
                 description: "Comprehensive handwritten modules for Child Development, Pedagogy, and Core Electives.",
@@ -211,7 +205,7 @@
             }
         ];
 
-        // Track user items purely across localized operational state
+        // Track user items across localized operational state
         let wishlist = [];
 
         const grid = document.getElementById('books-grid');
@@ -221,7 +215,6 @@
         const countIndicator = document.getElementById('results-count');
         
         const wishlistItemsContainer = document.getElementById('wishlist-items');
-        const wishlistEmptyState = document.getElementById('wishlist-empty');
         const wishlistCheckoutBox = document.getElementById('wishlist-checkout-box');
         const wishlistTotalPriceText = document.getElementById('wishlist-total-price');
         const wishlistBadge = document.getElementById('wishlist-badge');
@@ -254,10 +247,12 @@
             noResults.classList.add('hidden');
             countIndicator.innerText = `Showing ${filtered.length} of ${books.length} items`;
 
+            // Updated HTML structural wrapper class additions: `min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-center` 
+            // This forces it to form a horizontal gallery layout on small viewports while remaining a clean native static box card on desktop.
             grid.innerHTML = filtered.map(book => {
                 const isInWishlist = wishlist.some(item => item.id === book.id);
                 return `
-                <div class="group bg-white border border-slate-200 hover:border-[#6d8196]/40 hover:shadow-md rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between">
+                <div class="min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-center group bg-white border border-slate-200 hover:border-[#6d8196]/40 hover:shadow-md rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between">
                     <div>
                         <div class="aspect-[4/5] bg-slate-50 overflow-hidden relative border-b border-slate-100">
                             <img src="${book.image}" alt="${book.title}" class="w-full h-full object-cover group-hover:scale-102 transition-all duration-500" loading="lazy">
@@ -278,7 +273,6 @@
                                 <span class="text-lg font-extrabold text-[#1e293b]">${book.displayPrice}</span>
                                 <span class="text-xs text-[#94a3b8] line-through">${book.originalPrice}</span>
                             </div>
-                            <!-- Wishlist Toggle -->
                             <button onclick="toggleWishlist(${book.id})" class="text-xs p-2 rounded-lg border transition-all ${isInWishlist ? 'bg-rose-50 border-rose-200 text-rose-500' : 'bg-slate-50 border-slate-200 text-slate-400 hover:text-slate-600'}" title="Toggle Wishlist">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 20 20">
                                     <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
@@ -286,14 +280,13 @@
                             </button>
                         </div>
                         <button onclick="handlePurchase('${book.title.replace(/'/g, "\\'")}')" class="w-full text-center bg-[#1e293b] hover:bg-[#6d8196] text-white font-bold text-xs py-3 px-4 rounded-xl transition-all shadow-sm">
-                            Buy via Instagram DM
+                            Buy via Instagram
                         </button>
                     </div>
                 </div>
             `}).join('');
         }
 
-        // Wishlist Modification Functions
         function toggleWishlist(id) {
             const targetBook = books.find(b => b.id === id);
             const index = wishlist.findIndex(item => item.id === id);
@@ -325,7 +318,6 @@
                 return;
             }
 
-            wishlistEmptyState.classList.add('hidden');
             wishlistCheckoutBox.classList.remove('hidden');
             clearWishlistBtn.classList.remove('hidden');
 
@@ -358,13 +350,11 @@
             triggerToast("Wishlist Cleared", "All cached items have been reset.", true);
         }
 
-        // Single Purchase Direct Redirect Out
         function handlePurchase(title) {
             const formattedMsg = `Hi NoteIQ, I want to purchase your exam resource: "${title}". Please send me the payment details.`;
             executeCopyAndRedirect(formattedMsg);
         }
 
-        // Bulk Purchase Bundle Mechanism
         function handleBulkPurchase() {
             if (wishlist.length === 0) return;
             
@@ -378,13 +368,23 @@
 
         function executeCopyAndRedirect(textPayload) {
             navigator.clipboard.writeText(textPayload).then(() => {
-                triggerToast("Order Info Copied", "Opening Instagram profile interface. Paste the copied item details inside your chat frame.", false);
+                triggerToast("Order Info Copied", "Opening Instagram. Paste the copied details into our DM chat frame.", false);
+                
                 setTimeout(() => {
-                    window.open(INSTAGRAM_DM_LINK, '_blank');
+                    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+                    if (isMobile) {
+                        window.location.href = INSTAGRAM_APP_URI;
+                        setTimeout(() => {
+                            window.open(INSTAGRAM_WEB_LINK, '_blank');
+                        }, 1500);
+                    } else {
+                        window.open(INSTAGRAM_WEB_LINK, '_blank');
+                    }
                 }, 1800);
             }).catch(err => {
-                console.error('Clipboard permission error', err);
-                window.open(INSTAGRAM_DM_LINK, '_blank');
+                console.error('Clipboard processing failure', err);
+                window.open(INSTAGRAM_WEB_LINK, '_blank');
             });
         }
 
@@ -406,7 +406,6 @@
             }, 3000);
         }
 
-        // Event Handling Filters Setup
         searchInput.addEventListener('input', (e) => {
             searchQuery = e.target.value.toLowerCase();
             displayBooks();
