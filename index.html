@@ -106,14 +106,14 @@
 
                     <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-4" id="category-filters">
                         <button data-category="all" class="cat-btn px-4 py-2 rounded-lg text-xs font-bold bg-[#6d8196] text-white transition-all shadow-sm shadow-[#6d8196]/10">All Resources</button>
-                        <button data-category="ct-notes" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">CT Exam Notes</button>
+                        <button data-category="ct-notes" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">Combine Packages</button>
                         <button data-category="sample-paper" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">Sample Papers</button>
                         <button data-category="pyqs" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-[#64748b] hover:text-[#1e293b] hover:border-slate-300 transition-all">PYQs</button>
                     </div>
                 </div>
 
                 <div id="books-grid" class="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory no-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-x-visible md:pb-0 md:snap-none">
-                    </div>
+                </div>
 
                 <div id="no-results" class="hidden text-center py-20">
                     <p class="text-[#64748b] text-sm font-medium">No resources match your search parameters.</p>
@@ -171,37 +171,47 @@
         const INSTAGRAM_APP_URI = "instagram://user?username=noteiq_"; 
         const INSTAGRAM_WEB_LINK = "https://instagram.com/noteiq_";
 
-        // Primary Catalog Array
+        // Primary Catalog Array - Consolidated category names dynamically handled inside displayBooks
         const books = [
             {
                 id: 1,
-                title: "Complete CT Exam Foundation Notes (Paper-I & II)",
+                title: "CT/D.El.Ed Exam Kit (Combine Package)",
                 category: "ct-notes",
-                price: "149", 
-                displayPrice: "₹149",
-                originalPrice: "₹499",
-                description: "Comprehensive handwritten modules for Child Development, Pedagogy, and Core Electives.",
-                image: "https://images.unsplash.com/photo-1516116211223-5c359a36298a?auto=format&fit=crop&q=80&w=400"
+                price: "79", 
+                displayPrice: "₹79",
+                originalPrice: "₹179",
+                description: "Comprehensive modules for CT/D.El.Ed Exam.",
+                image: "IMG_20260620_115504.png"
             },
             {
                 id: 2,
-                title: "CT Exam Mathematics & Science Mock Mockup Sets",
+                title: "NOTES",
                 category: "sample-paper",
-                price: "99",
-                displayPrice: "₹99",
-                originalPrice: "₹299",
+                price: "39",
+                displayPrice: "₹39",
+                originalPrice: "₹99",
                 description: "10 high-probability verified sample question frameworks with complete answers.",
-                image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=400"
+                image: "NOtes.png"
             },
             {
                 id: 3,
                 title: "Last 5 Years CT Exam Solution Solved PYQs",
                 category: "pyqs",
-                price: "129",
-                displayPrice: "₹129",
-                originalPrice: "₹399",
+                price: "29",
+                displayPrice: "₹29",
+                originalPrice: "₹99",
                 description: "Authentic previous year question papers mapped with precise step-by-step resolution breakdowns.",
-                image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=400"
+                image: "Pyqs2.png"
+            },
+            {
+                id: 4,
+                title: "Social Science & Language Target Practice Modules",
+                category: "notes",
+                price: "29",
+                displayPrice: "₹29",
+                originalPrice: "₹99",
+                description: "A high-density, exam-targeted study bundle covering core matrices.",
+                image: "sample Papaer.png"
             }
         ];
 
@@ -247,17 +257,31 @@
             noResults.classList.add('hidden');
             countIndicator.innerText = `Showing ${filtered.length} of ${books.length} items`;
 
-            // Updated HTML structural wrapper class additions: `min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-center` 
-            // This forces it to form a horizontal gallery layout on small viewports while remaining a clean native static box card on desktop.
             grid.innerHTML = filtered.map(book => {
                 const isInWishlist = wishlist.some(item => item.id === book.id);
+                
+                // Unified logic for badges
+                let badgeLabel = 'PYQ';
+
+                if (book.category === 'ct-notes') {
+                    badgeLabel = 'Combine Package';
+
+                } else if (book.category === 'sample-paper') {
+                    badgeLabel = 'Notes';
+
+                } 
+                else if (book.category === 'notes') {
+                    badgeLabel = 'SAMPLE PAPER';
+                }
+
+
                 return `
                 <div class="min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-center group bg-white border border-slate-200 hover:border-[#6d8196]/40 hover:shadow-md rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between">
                     <div>
                         <div class="aspect-[4/5] bg-slate-50 overflow-hidden relative border-b border-slate-100">
                             <img src="${book.image}" alt="${book.title}" class="w-full h-full object-cover group-hover:scale-102 transition-all duration-500" loading="lazy">
                             <span class="absolute top-3 right-3 text-[10px] uppercase tracking-wider font-bold bg-white/90 text-[#1e293b] px-2.5 py-1 rounded-md border border-slate-200">
-                                ${book.category === 'ct-notes' ? 'CT Notes' : book.category === 'sample-paper' ? 'Sample Paper' : 'PYQ'}
+                                ${badgeLabel}
                             </span>
                         </div>
                         
@@ -284,7 +308,7 @@
                         </button>
                     </div>
                 </div>
-            `}).join('');
+            `;}).join('');
         }
 
         function toggleWishlist(id) {
